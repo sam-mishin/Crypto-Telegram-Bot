@@ -2,9 +2,8 @@ from helperFunc import connect_db, getCA
 from telethon import TelegramClient, events
 
 # Telegram API credentials
-api_id = ''
-api_hash = ""
-bot_token = ''
+# Telegram API credentials are loaded from .env (see config.py)
+from config import API_ID as api_id, API_HASH as api_hash, BOT_TOKEN as bot_token
 
 bot = TelegramClient('chat_scraper', api_id, api_hash).start(bot_token=bot_token)
 

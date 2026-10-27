@@ -4,8 +4,8 @@ from psycopg import sql
 from telethon import TelegramClient, events
 from helperFunc import connect_db
 
-api_id = 22363106
-api_hash = "5df0a9af86db1d36338032632b51c197"
+# Telegram API credentials are loaded from .env (see config.py)
+from config import API_ID as api_id, API_HASH as api_hash
 
 bot_username = 'CryptoCoinFinderBot'
 

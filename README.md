@@ -44,6 +44,7 @@ Telegram chats ──▶ chat_scraper.py ──▶ helperFunc.getCA() ──▶ 
 | `DexScreenerAPI.py` | Fetches token and pair data from DexScreener |
 | `volumeTracker.py` | Watches volume on newly listed Solana tokens |
 | `messageForwarder.py` | Forwards messages from monitored chats to the bot |
+| `config.py` | Loads credentials and database settings from `.env` |
 | `start_scripts.py` | Starts the forwarder and scraper together |
 
 ## Setup
@@ -51,10 +52,10 @@ Telegram chats ──▶ chat_scraper.py ──▶ helperFunc.getCA() ──▶ 
 1. Install Python 3.10+ and PostgreSQL.
 2. Install dependencies:
    ```bash
-   pip install telethon "psycopg[binary]" requests psutil
+   pip install telethon "psycopg[binary]" requests psutil python-dotenv
    ```
 3. Create a bot with [@BotFather](https://t.me/BotFather), and get an API ID and hash at [my.telegram.org](https://my.telegram.org).
-4. Add your bot token, API ID/hash and database connection details to the scripts (moving these to environment variables is on the to-do list).
+4. Copy `.env.example` to `.env` and fill in your bot token, API ID/hash and database settings. `config.py` loads them, and `.env` is git-ignored.
 5. Create the `user_chats` and `coin_table` tables in PostgreSQL.
 6. Run the bot:
    ```bash

@@ -8,9 +8,8 @@ import psutil
 import os
 import signal
 
-api_id = ''
-api_hash = ""
-bot_token = ''
+# Telegram API credentials are loaded from .env (see config.py)
+from config import API_ID as api_id, API_HASH as api_hash, BOT_TOKEN as bot_token
 
 while True:
     try:

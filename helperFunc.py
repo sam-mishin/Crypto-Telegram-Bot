@@ -1,26 +1,15 @@
 import psycopg
 import re
 import requests
+from config import DB_CONFIG
 
 def connect_db():
-    conn = psycopg.connect(
-        host="10.0.0.173",
-        dbname="crypto_coin_db",  # Replace with your server's IP if remote
-        user="postgres",   # Replace with your PostgreSQL username
-        password="s.mishin", 
-        port=5432  # Replace with your PostgreSQL password
-    )
+    conn = psycopg.connect(**DB_CONFIG)
     print('Connected to database...')
     return conn
 
 async def async_connect_db():
-    aconn = await psycopg.AsyncConnection.connect(
-    host="10.0.0.173",
-    dbname="crypto_coin_db",  # Replace with your server's IP if remote
-    user="postgres",   # Replace with your PostgreSQL username
-    password="s.mishin", 
-    port=5432  # Replace with your PostgreSQL password
-    )
+    aconn = await psycopg.AsyncConnection.connect(**DB_CONFIG)
     print('Connected to database...')
     return aconn
 
